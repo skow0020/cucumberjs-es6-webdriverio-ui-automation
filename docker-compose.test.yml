@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+  test:
+    image: node:8.7.0
+    environment:
+      - GRID_HOST=${GRID_HOST}
+    volumes:
+      - .:/code
+    command:
+      - /bin/bash
+      - /code/run-tests.sh

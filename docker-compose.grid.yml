@@ -1,0 +1,66 @@
+version: '3.3'
+
+services:
+  selenium-hub:
+    image: selenium/hub
+    ports:
+      - "4444:4444"
+    environment:
+     - GRID_BROWSER_TIMEOUT=60000
+     - GRID_TIMEOUT=60000
+     - GRID_MAX_SESSION=50
+     - GRID_CLEAN_UP_CYCLE=60000
+     - GRID_UNREGISTER_IF_STILL_DOWN_AFTER=180000
+     - GRID_NEW_SESSION_WAIT_TIMEOUT=60000
+
+  414px:
+    image: selenium/node-chrome
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_PORT_4444_TCP_ADDR=selenium-hub
+      - HUB_PORT_4444_TCP_PORT=4444
+      - SE_OPTS=-browser browserName=414px,maxInstances=1
+
+#  736px:
+#    image: selenium/node-chrome
+#    depends_on:
+#      - selenium-hub
+#    environment:
+#      - HUB_PORT_4444_TCP_ADDR=selenium-hub
+#      - HUB_PORT_4444_TCP_PORT=4444
+#      - SE_OPTS=-browser browserName=736px,maxInstances=1
+#
+#  768px:
+#    image: selenium/node-chrome
+#    depends_on:
+#      - selenium-hub
+#    environment:
+#      - HUB_PORT_4444_TCP_ADDR=selenium-hub
+#      - HUB_PORT_4444_TCP_PORT=4444
+#      - SE_OPTS=-browser browserName=768px,maxInstances=1
+#
+#  1024px:
+#    image: selenium/node-chrome
+#    depends_on:
+#      - selenium-hub
+#    environment:
+#      - HUB_PORT_4444_TCP_ADDR=selenium-hub
+#      - HUB_PORT_4444_TCP_PORT=4444
+#      - SE_OPTS=-browser browserName=1024px,maxInstances=1
+
+  chrome:
+    image: selenium/node-chrome
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_PORT_4444_TCP_ADDR=selenium-hub
+      - HUB_PORT_4444_TCP_PORT=4444
+
+#  firefox:
+#    image: selenium/node-firefox
+#    depends_on:
+#      - selenium-hub
+#    environment:
+#      - HUB_PORT_4444_TCP_ADDR=selenium-hub
+#      - HUB_PORT_4444_TCP_PORT=4444

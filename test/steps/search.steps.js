@@ -1,17 +1,16 @@
 import { defineSupportCode } from 'cucumber';
-import page from '../../src/pages/googleSearch.page';
+import page from '../../src/pages/search.page';
 
 defineSupportCode(function ({ Given, When, Then }) {
-
-    Given('I am on the google home page', function () {
+    Given('I am on google', function () {
         page.trait();
     });
 
-    When('I search for {string}', function (value) {
-        page.search(value);
+    When('I search for {string}', function (term) {
+        page.searchFor(term);
     });
 
-    Then('I receive good search results', function () {
+    Then('search results are returned', function () {
         page.assertResults();
     });
 });

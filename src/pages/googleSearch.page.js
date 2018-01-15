@@ -3,7 +3,7 @@ import Page from './page';
 class GoogleSearchPage extends Page {
     get searchTextBox() { return browser.element('#lst-ib'); }
     get searchButton() { return browser.element('#btnK'); }
-    get searchResults() { return browser.elements('.r'); }
+    get searchResults() { return browser.getText('#rso .srg .g .rc .r'); }
 
     constructor() {
         super();
@@ -19,15 +19,13 @@ class GoogleSearchPage extends Page {
     }
 
     search(value) {
-        this.searchTextBox.setValue(value);
-        browser.keys('Enter');
+        this.searchTextBox.setValue(`${value}\n`);
     }
 
     assertResults() {
-        let resultTitles = browser.getText('.r');
-        for (var i = 0; i < resultTitles.length - 1; i++) {
-            resultTitles[i].toLowerCase().should.containEql(this.searchTextBox.getValue());
-        }
+        this.searchResults.forEach(result => {
+            result.toLowerCase().should.containEql(this.searchTextBox.getValue().toLowerCase());
+        });
     }
 }
 

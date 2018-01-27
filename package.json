@@ -12,13 +12,13 @@
     "port": "4444"
   },
   "scripts": {
-    "a11y": "a11y ./results/a11y",
+    "gherkin-lint": "gherkin-lint",
     "dev": "wdio wdio.dev.conf.js",
     "test": "wdio wdio.test.conf.js",
-    "jenkins": "wdio wdio.conf.js --host $npm_package_config_host",
-    "lint": "sonarlint --src 'src/**' --tests 'test/**'"
+    "jenkins": "wdio wdio.conf.js --host $npm_package_config_host"
   },
   "devDependencies": {
+    "@types/webdriverio": "4.8.7",
     "babel-core": "6.26.0",
     "babel-plugin-add-module-exports": "0.2.1",
     "babel-plugin-transform-es2015-block-scoped-functions": "6.22.0",
@@ -26,19 +26,22 @@
     "babel-register": "6.26.0",
     "cucumber": "3.1.0",
     "eslint": "4.15.0",
-    "eslint-config-standard": "^11.0.0-beta.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1",
+    "eslint-config-standard": "11.0.0-beta.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-node": "5.2.1",
+    "eslint-plugin-promise": "3.6.0",
+    "eslint-plugin-standard": "3.0.1",
+    "eslint-plugin-webdriverio": "1.0.1",
+    "gherkin-lint": "2.8.0",
     "mkdirp": "0.5.1",
     "should": "13.1.0",
+    "typescript": "2.6.2",
     "wdio-cucumber-framework": "1.0.2",
     "wdio-junit-reporter": "0.3.1",
     "wdio-junit-to-html": "3.1.2",
     "wdio-selenium-standalone-service": "0.0.9",
     "wdio-spec-reporter": "0.1.2",
-    "webdriverio": "4.8.0"
+    "webdriverio": "4.10.1"
   },
   "babel": {
     "presets": [

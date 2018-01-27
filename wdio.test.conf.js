@@ -1,4 +1,4 @@
-const config = require('./wdio.conf').config;
+const { config } = require('./wdio.conf');
 
 /**
  * custom options for test
@@ -8,7 +8,7 @@ const config = require('./wdio.conf').config;
  */
 
 config.baseUrl = 'https://www.google.com/';
-config.specs = [ './test/features/*.feature' ];
+config.specs = [ './test/features/*/*.feature' ];
 
 /**
  * selenium config
@@ -21,39 +21,5 @@ config.specs = [ './test/features/*.feature' ];
 config.services = [ 'selenium-standalone' ];
 config.seleniumLogs = './logs/selenium.log';
 config.maxInstances = 1;
-config.capabilities = [
-    {
-        browserName: '414px',
-        isMobile: true,
-        chromeOptions: {
-            args: ['--window-size=414,736']
-        }
-    },
-    // {
-    //     browserName: '736px',
-    //     chromeOptions: {
-    //         args: [ '--window-size=736,414']
-    //     }
-    //
-    // },
-    // {
-    //     browserName: '768px',
-    //     chromeOptions: {
-    //         args: [ '--window-size=768,1024' ]
-    //     }
-    // },
-    // {
-    //     browserName: '1024px',
-    //     chromeOptions: {
-    //         args: [ '--window-size=1024,768' ]
-    //     }
-    // },
-    {
-        browserName: 'chrome',
-        chromeOptions: {
-            args: [ '--window-size=1920,1080' ]
-        }
-    }
-];
 
 exports.config = config;

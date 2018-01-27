@@ -1,4 +1,4 @@
-const config = require('./wdio.conf').config;
+const { config } = require('./wdio.conf');
 
 /**
  * custom options for dev
@@ -15,13 +15,5 @@ config.specs = [ './test/features/*.feature' ];
 config.services = [ 'selenium-standalone' ];
 config.seleniumLogs = './logs/selenium.log';
 config.maxInstances = 1;
-config.capabilities = [
-    {
-        browserName: 'chrome'
-    },
-    {
-        browserName: 'firefox'
-    }
-];
 
 exports.config = config;

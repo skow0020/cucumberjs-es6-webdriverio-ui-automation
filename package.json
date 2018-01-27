@@ -35,7 +35,6 @@
     "gherkin-lint": "2.8.0",
     "mkdirp": "0.5.1",
     "should": "13.1.0",
-    "typescript": "2.6.2",
     "wdio-cucumber-framework": "1.0.2",
     "wdio-junit-reporter": "0.3.1",
     "wdio-junit-to-html": "3.1.2",

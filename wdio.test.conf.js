@@ -8,7 +8,7 @@ const { config } = require('./wdio.conf');
  */
 
 config.baseUrl = 'https://www.google.com/';
-config.specs = [ './test/features/*/*.feature' ];
+config.specs = [ './test/features/*.feature' ];
 
 /**
  * selenium config

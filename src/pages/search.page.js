@@ -2,8 +2,8 @@ import Page from './page';
 
 
 class GoogleSearchPage extends Page {
-    get search() { return $('#lst-ib'); }
-    get searchButton() { return $('#btnK'); }
+    get search() { return $('[name=q]'); }
+    get searchButton() { return $('[name=btnK')[1]; }
     get searchResults() { return $$('#rso .g .rc'); }
 
 

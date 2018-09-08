@@ -8,8 +8,8 @@ module.exports = {
   getScreenshot: function (step) {
     const scenarioName = step.scenario.name.replace(/\s/g, '_').toLowerCase();
     const stepName = step.name.replace(/\s/g, '_').toLowerCase();
-    const { browserName } = this.desiredCapabilities.browserName;
-    const screenshot = `${browserName}.${scenarioName}.${stepName}.png`;
+    const capabilityBrowser = browser.desiredCapabilities.browserName;
+    const screenshot = `${capabilityBrowser}.${scenarioName}.${stepName}.png`;
     const fileName = path.join(browser.options.screenshotsPath, screenshot);
     this.saveScreenshot(fileName);
   }

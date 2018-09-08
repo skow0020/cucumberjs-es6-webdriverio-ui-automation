@@ -10,7 +10,7 @@ module.exports = {
     const stepName = step.name.replace(/\s/g, '_').toLowerCase();
     const { browserName } = this.desiredCapabilities.browserName;
     const screenshot = `${browserName}.${scenarioName}.${stepName}.png`;
-    const fileName = path.join(browser.options.screenshotPath, screenshot);
+    const fileName = path.join(browser.options.screenshotsPath, screenshot);
     this.saveScreenshot(fileName);
   }
 };

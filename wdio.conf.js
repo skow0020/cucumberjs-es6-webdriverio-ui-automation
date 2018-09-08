@@ -77,7 +77,7 @@ exports.config = {
   logLevel: 'silent',
   coloredLogs: true,
   deprecationWarnings: true,
-  screenshotPath: './results/screenshots',
+  screenshotsPath: './results/screenshots',
   waitforTimeout: 20000,
   framework: 'cucumber',
   cucumberOpts: {
@@ -100,11 +100,10 @@ exports.config = {
   },
 
   before: function () {
-    mkdirp.sync(browser.options.screenshotPath);
+    mkdirp.sync(browser.options.screenshotsPath);
 
     browser.addCommand('getFile', commands.getFile.bind(browser));
     browser.addCommand('getScreenshot', commands.getScreenshot.bind(browser));
-    // commands.load();
   },
 
   beforeScenario: function () {

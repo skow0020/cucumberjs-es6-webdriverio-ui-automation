@@ -1,11 +1,11 @@
-import Page from './page';
+import Page from '../pages/page';
 
 class FooterModule extends Page {
-    get footer() { return $('#fbar'); }
+  get footer() { return $('#fbar'); }
 
-    trait() {
-        this.footer.waitForVisible();
-    }
+  trait() {
+    this.footer.waitForVisible();
+  }
 }
 
 export default new FooterModule();

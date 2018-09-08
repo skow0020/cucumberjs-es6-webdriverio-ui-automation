@@ -1,11 +1,11 @@
-import Page from './page';
+import Page from '../pages/page';
 
 class HeaderModule extends Page {
-    get header() { return $('#top_nav'); }
+  get header() { return $('#top_nav'); }
 
-    trait() {
-        this.header.waitForVisible();
-    }
+  trait() {
+    this.header.waitForVisible();
+  }
 }
 
 export default new HeaderModule();

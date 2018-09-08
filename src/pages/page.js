@@ -1,3 +1,5 @@
+import should from 'should'; // eslint-disable-line no-unused-vars
+
 export default class Page {
 
   trait(href) {
